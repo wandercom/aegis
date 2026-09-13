@@ -18,7 +18,7 @@ other component to depend on Reeve.
 ## Interface (proposed)
 
 ```typescript
-import type { Logger } from '@stack/observability';
+import type { Logger } from '@exemplar-stack/observability';
 
 export type ResourceClass = 'cpu' | 'io' | 'llm' | 'pg' | 'mem-sample';
 
@@ -122,8 +122,8 @@ export interface Aegis {
 1. Spec lock: this doc + a TypeScript interface file `index.d.ts`.
 2. First implementation lives at `reeve/src/observability/aegis/` as
    a private module. Public interface stable.
-3. When Apprentice or Chronicler needs it, extract to `~/Code/aegis/`
-   as a published `@stack/aegis` package.
+3. When Apprentice or Chronicler needs it, extract to `~/WanderRepos/repos/aegis/`
+   as a published `@exemplar-stack/aegis` package.
 4. CI gate: lint rule that rejects un-wrapped pg queries / fetch calls
    in src/ outside aegis itself.
 

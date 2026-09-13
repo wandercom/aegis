@@ -2,7 +2,7 @@
 
 **Status:** Accepted (2026-05-06; Claude/Codex collaboration)
 **Supersedes:** None
-**Source spec:** `~/Code/aegis/SPEC.md`
+**Source spec:** `~/WanderRepos/repos/aegis/SPEC.md`
 
 ## Context
 
@@ -17,8 +17,8 @@ component?
 
 ## Decision
 
-**Twin implementations: TypeScript at `~/Code/aegis/ts/` and Python at
-`~/Code/aegis/py/`. Shared `pact.yaml` contract spec + golden test
+**Twin implementations: TypeScript at `~/WanderRepos/repos/aegis/ts/` and Python at
+`~/WanderRepos/repos/aegis/py/`. Shared `pact.yaml` contract spec + golden test
 vectors at the repo root.**
 
 ### Why twin
@@ -64,14 +64,14 @@ Edge cases vectors AND fuzzer must cover (sim-flagged):
 ### Repo layout
 
 ```
-~/Code/aegis/
+~/WanderRepos/repos/aegis/
 ├── SPEC.md              # already exists
 ├── ADR-001-extraction.md  # this file
 ├── pact.yaml            # contract spec consumed by both impls
 ├── vectors/
 │   └── budget-cases.json
 ├── ts/
-│   ├── package.json     # @stack/aegis
+│   ├── package.json     # @exemplar-stack/aegis
 │   ├── tsconfig.json
 │   ├── src/
 │   │   ├── types.ts     # ported from reeve/src/observability/aegis/
@@ -100,11 +100,11 @@ Edge cases vectors AND fuzzer must cover (sim-flagged):
 
 ### Publishing
 
-- TS: `git+ssh://github.com/jmcentire/aegis.git#main` referenced in
+- TS: `git+ssh://github.com/wandercom/aegis.git#main` referenced in
   consumer `package.json`. Subpath `ts/` resolved via `workspaces`
   field. Defer npm registry publish until aegis is consumed by 3+
   components.
-- Python: `pip install git+ssh://github.com/jmcentire/aegis.git#egg=aegis&subdirectory=py`.
+- Python: `pip install git+ssh://github.com/wandercom/aegis.git#egg=aegis&subdirectory=py`.
   Defer PyPI until similar threshold.
 
 ### Lint plugin
@@ -136,7 +136,7 @@ V1 lint plugins flag (warn); V2 hard-fails consumer CI.
 
 ## Migration plan (Reeve, blocked on this ADR shipping)
 
-1. Init `~/Code/aegis/` per layout above.
+1. Init `~/WanderRepos/repos/aegis/` per layout above.
 2. Copy + adapt `reeve/src/observability/aegis/` into `ts/src/`.
 3. Port Reeve's tests to `ts/tests/`. They should pass unchanged.
 4. Author `vectors/budget-cases.json` from the test cases.
@@ -144,7 +144,7 @@ V1 lint plugins flag (warn); V2 hard-fails consumer CI.
 6. Add Biome custom-lint rule (V1 warn-mode).
 7. Reeve PR: replace
    `import {...} from '../observability/aegis/index.js'` with
-   `import {...} from '@stack/aegis/ts'` (or installed name); delete
+   `import {...} from '@exemplar-stack/aegis/ts'` (or installed name); delete
    private module; verify suite stays green.
 
 ## Open questions for next ADR

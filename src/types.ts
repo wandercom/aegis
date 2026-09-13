@@ -6,7 +6,7 @@
 //   - Tags are required. The primitive REFUSES un-tagged calls — telemetry
 //     without tags is signal-without-context.
 //
-// Per ~/Code/aegis/pact.yaml, this surface is shared with the Python
+// Per ~/WanderRepos/repos/aegis/pact.yaml, this surface is shared with the Python
 // sibling at py/src/aegis/. Drift here means cross-language tests fail.
 
 // Ordered cheapest -> most expensive. Used to validate that a fallback
