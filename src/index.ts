@@ -1,4 +1,4 @@
-// @stack/aegis — resource-budget primitive.
+// @exemplar-stack/aegis — resource-budget primitive.
 //
 // Wrap every blocking call in your stack with a declared budget,
 // optional fallback, and structured tags. See ../../SPEC.md and

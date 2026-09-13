@@ -35,7 +35,7 @@ gets a fully built package with `.d.ts` files.
 ```json
 {
   "dependencies": {
-    "@stack/aegis": "git+https://github.com/jmcentire/aegis.git#v0.1.1"
+    "@exemplar-stack/aegis": "git+https://github.com/wandercom/aegis.git#v0.1.1"
   }
 }
 ```
@@ -46,7 +46,7 @@ unreleased fixes.
 ### Wrap a blocking call
 
 ```typescript
-import { withResourceBudget } from '@stack/aegis';
+import { withResourceBudget } from '@exemplar-stack/aegis';
 
 const result = await withResourceBudget(
   {
@@ -75,7 +75,7 @@ fallback, error). It does NOT import any logging library — that's
 your choice:
 
 ```typescript
-import { setAegisObserver } from '@stack/aegis';
+import { setAegisObserver } from '@exemplar-stack/aegis';
 import { logger } from './observability/logger.js';
 
 setAegisObserver((evt) => {
@@ -100,7 +100,7 @@ Call `setAegisObserver()` once at boot. To unwire (e.g., in tests):
 Tags propagate via Node's `AsyncLocalStorage`:
 
 ```typescript
-import { getAegisTags } from '@stack/aegis';
+import { getAegisTags } from '@exemplar-stack/aegis';
 
 async function deeplyNested() {
   const tags = getAegisTags();
@@ -113,7 +113,7 @@ async function deeplyNested() {
 ### Install
 
 ```bash
-pip install git+ssh://git@github.com/jmcentire/aegis.git#egg=stack-aegis&subdirectory=py
+pip install git+ssh://git@github.com/wandercom/aegis.git#egg=stack-aegis&subdirectory=py
 ```
 
 ### Wrap a blocking call
@@ -261,7 +261,7 @@ aegis/
 ├── ADR-001-extraction.md     # twin TS+Python decision
 ├── pact.yaml                 # behavioral contract spec (doc artifact)
 ├── README.md                 # this file
-├── package.json              # @stack/aegis (TS package)
+├── package.json              # @exemplar-stack/aegis (TS package)
 ├── tsconfig.json             # TS compiler config (allowImportingTsExtensions for dev)
 ├── tsconfig.build.json       # emits dist/ via the prepare script
 ├── vitest.config.ts
