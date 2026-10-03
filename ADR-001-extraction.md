@@ -2,7 +2,7 @@
 
 **Status:** Accepted (2026-05-06; Claude/Codex collaboration)
 **Supersedes:** None
-**Source spec:** `~/WanderRepos/repos/aegis/SPEC.md`
+**Source spec:** `aegis/SPEC.md`
 
 ## Context
 
@@ -17,8 +17,8 @@ component?
 
 ## Decision
 
-**Twin implementations: TypeScript at `~/WanderRepos/repos/aegis/ts/` and Python at
-`~/WanderRepos/repos/aegis/py/`. Shared `pact.yaml` contract spec + golden test
+**Twin implementations: TypeScript at `aegis/ts/` and Python at
+`aegis/py/`. Shared `pact.yaml` contract spec + golden test
 vectors at the repo root.**
 
 ### Why twin
@@ -64,7 +64,7 @@ Edge cases vectors AND fuzzer must cover (sim-flagged):
 ### Repo layout
 
 ```
-~/WanderRepos/repos/aegis/
+aegis/
 ├── SPEC.md              # already exists
 ├── ADR-001-extraction.md  # this file
 ├── pact.yaml            # contract spec consumed by both impls
@@ -136,7 +136,7 @@ V1 lint plugins flag (warn); V2 hard-fails consumer CI.
 
 ## Migration plan (Reeve, blocked on this ADR shipping)
 
-1. Init `~/WanderRepos/repos/aegis/` per layout above.
+1. Init `aegis/` per layout above.
 2. Copy + adapt `reeve/src/observability/aegis/` into `ts/src/`.
 3. Port Reeve's tests to `ts/tests/`. They should pass unchanged.
 4. Author `vectors/budget-cases.json` from the test cases.

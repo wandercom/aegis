@@ -304,6 +304,6 @@ aegis/
 
 Spec'd and extracted 2026-05-05/06 from the simulacrum-driven
 NASA-bar review of Reeve's production-stability roadmap. First
-implementation lived at `~/Code/reeve/src/observability/aegis/` and
+implementation lived at Reeve's `src/observability/aegis/` and
 moves out of Reeve because Apprentice, Baton, Chronicler, and other
 stack components need the same primitive.

@@ -122,7 +122,7 @@ export interface Aegis {
 1. Spec lock: this doc + a TypeScript interface file `index.d.ts`.
 2. First implementation lives at `reeve/src/observability/aegis/` as
    a private module. Public interface stable.
-3. When Apprentice or Chronicler needs it, extract to `~/WanderRepos/repos/aegis/`
+3. When Apprentice or Chronicler needs it, extract to `aegis/`
    as a published `@exemplar-stack/aegis` package.
 4. CI gate: lint rule that rejects un-wrapped pg queries / fetch calls
    in src/ outside aegis itself.
